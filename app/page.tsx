@@ -3,6 +3,7 @@ import Link from "next/link";
 import heroCard from "./components/hero_card";
 import { Gauge, Shield, UsersRound } from "lucide-react";
 import Button from "./components/button";
+import HandBurger from "./components/HandBurger";
 
 export default function Home() {
 
@@ -23,12 +24,12 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex flex-row items-center justify-between">
+      <header className="w-full flex flex-row items-center justify-between">
         <Link href={"/"} id="logo" className="flex flex-col items-center gap-x-5">
           <img src="logo_transparent.png" alt="logo" width={100} height={200} />
           <p className="text-indigo-800 font-bold">Shaine</p>
         </Link>
-        <nav className="flex flex-row items-center gap-x-5">
+        <nav className="hidden md:flex flex-row items-center gap-x-5">
           <Link href={"/about"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
             About Us
           </Link>
@@ -39,9 +40,12 @@ export default function Home() {
             Sign In
           </Link>
         </nav>
+        <span className="sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden">
+          <HandBurger />
+        </span>
       </header>
       <main className="">
-        <div id="hero" className="flex flex-col space-y-5 text-white bg-linear-to-r from-indigo-700 via-blue-500 to-cyan-500 rounded-t-2xl px-5 py-5 ">
+        <div id="hero" className="flex flex-col space-y-5 text-white bg-linear-to-r from-indigo-700 via-blue-500 to-cyan-500 rounded-t-2xl px-1 md:px-5 py-5 ">
           <div className="flex flex-row justify-between items-center">
             <div className="p-10 flex flex-col gap-y-5">
               <h1 className="text-4xl font-bold">
@@ -60,11 +64,11 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div>
+            <div className="hidden md:flex">
               <img src="desktop.png" alt="hero image" width={1000} height={500} />
             </div>
           </div>
-          <div id="hero-cards" className="flex flex-row flex-nowrap justify-around items-center space-x-5">
+          <div id="hero-cards" className="flex flex-col md:flex-row flex-nowrap justify-around items-center space-x-5">
             {heroCards.map((card, index) => (
               <div key={index} className="p-5">
                 {heroCard(card.title, card.description)}
@@ -72,21 +76,21 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div id="built-for-performance" className="flex flex-row justify-around items-center p-10 space-x-5">
-          <div>
+        <div id="built-for-performance" className="flex flex-col-reverse md:flex-row justify-around items-center p-10 md:space-x-5">
+          <div className="flex flex-col justify-center items-center gap-y-5">
             <h2 className="text-3xl font-bold text-indigo-800">
               Built for Performance and Security. Engineered with Modern Web Standard...
             </h2>
           </div>
           <div className="flex flex-row gap-x-10">
-            <Shield className="text-indigo-800 w-50 h-50" />
-            <Gauge className="text-indigo-800 w-50 h-50" />
+            <Shield className="text-indigo-800 w-20 h-20 md:w-50 md:h-50" />
+            <Gauge className="text-indigo-800 w-20 h-20 md:w-50 md:h-50" />
           </div>
         </div>
-        <div id="creators-business" className="bg-linear-to-r from-cyan-500 via-blue-500 to-indigo-700 text-white flex flex-row justify-around items-center rounded-t-2xl p-10 space-x-5">
+        <div id="creators-business" className="w-full px-5 bg-linear-to-r from-cyan-500 via-blue-500 to-indigo-700 text-white flex flex-row justify-between md:justify-around items-center rounded-t-2xl p-10 space-x-3 md:space-x-5">
           <div className="flex flex-col justify-center items-center gap-y-5">
-            <UsersRound className="w-30 h-30" />
-            <h2 className="text-3xl font-bold">
+            <UsersRound className="w-15 h-15 md:w-30 md:h-30" />
+            <h2 className="text-2xl font-bold">
               For Creators and Businesses
             </h2>
             <p className="text-lg">
@@ -94,8 +98,8 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col justify-center items-center gap-y-5">
-            <UsersRound className="w-30 h-30" />
-            <h2 className="text-3xl font-bold">
+            <UsersRound className="w-15 h-15 md:w-30 md:h-30" />
+            <h2 className="text-2xl font-bold">
               For Everyday Users
             </h2>
             <p className="text-lg">
@@ -109,9 +113,9 @@ export default function Home() {
         <p>Be the first to know when we launch!</p>
         <div className="flex flex-row space-x-4 items-center">
           <input type="text" className="bg-white text-black h-8 w-50 p-4 border-4 rounded-md" />
-          {Button("Join Now")}
+          <Button content="Join Now" />
         </div>
-        <div className="w-full border-t border-gray-400 flex flex-row justify-between items-center gap-x-5">
+        <div className="md:w-full border-t border-gray-400 flex flex-col md:flex-row justify-between items-center gap-y-5 md:gap-x-5">
           <div>
             <Link href={"/privacy-policy"} className="text-white font-bold visited:text-indigo-500 hover:underline">
               Privacy Policy
