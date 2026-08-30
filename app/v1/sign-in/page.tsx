@@ -44,7 +44,11 @@ const SignIn = () => {
                         <Button content="Sign In with Google" colour="bg-red-600" text="text-white" hoverColor="bg-red-700" />
                         <Button content="Sign In with Apple" colour="bg-gray-400" text="text-black" hoverColor="bg-gray-500" />
                     </div>
-                    <div id="signUp"></div>
+                    <div id="signUp">
+                        <Link href={"/v1/sign-up"} className="text-indigo-800 hover:text-blue-500 active:text-indigo-400">
+                            Don't have an account? Sign Up
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
