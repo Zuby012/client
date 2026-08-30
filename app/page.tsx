@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import heroCard from "./components/hero_card";
 import { Gauge, Shield, UsersRound } from "lucide-react";
