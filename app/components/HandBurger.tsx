@@ -51,11 +51,11 @@ const HandBurger = () => {
                             Contact Us
                         </Link>
                         <Link
-                            href="/v1/sign-in"
+                            href="/v1/sign-up"
                             onClick={closeMenu}
                             className="text-xl hover:text-indigo-200 transition-colors duration-200"
                         >
-                            Sign In
+                            Sign Up
                         </Link>
                     </nav>
                 </div>
