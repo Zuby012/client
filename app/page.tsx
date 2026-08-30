@@ -29,14 +29,14 @@ export default function Home() {
           <p className="text-indigo-800 font-bold">Shaine</p>
         </Link>
         <nav className="hidden md:flex flex-row items-center gap-x-5">
-          <Link href={"/#/about"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
+          <Link href={"/v1/about"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
             About Us
           </Link>
-          <Link href={"/#/contact"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
+          <Link href={"/v1/contact"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
             Contact Us
           </Link>
-          <Link href={"/#/sign-in"} className="p-2 rounded-md bg-indigo-800 text-white visited:bg-indigo-500 hover:bg-blue-500 active:bg-indigo-400">
-            Sign In
+          <Link href={"/v1/sign-up"} className="p-2 rounded-md bg-indigo-800 text-white visited:bg-indigo-500 hover:bg-blue-500 active:bg-indigo-400">
+            Sign Up
           </Link>
         </nav>
         <span className="sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden">
@@ -55,10 +55,10 @@ export default function Home() {
                 instant messaging and seenless user storefront between creators and their communities.
               </p>
               <div id="CTO" className="flex flex-row space-x-5">
-                <Link href={"/sign-in"} className="p-2 rounded-md bg-indigo-800 text-white shadow-lg hover:scale-105 active:scale-80 duration-500">
+                <Link href={"/v1/sign-in"} className="p-2 rounded-md bg-indigo-800 text-white shadow-lg hover:scale-105 active:scale-80 duration-500">
                   Get Started
                 </Link>
-                <Link href={"/about"} className="p-2 rounded-md bg-white text-indigo-800 shadow-lg hover:scale-105 active:scale-80 duration-500">
+                <Link href={"/v1/about"} className="p-2 rounded-md bg-white text-indigo-800 shadow-lg hover:scale-105 active:scale-80 duration-500">
                   Learn More
                 </Link>
               </div>
