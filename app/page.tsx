@@ -29,13 +29,13 @@ export default function Home() {
           <p className="text-indigo-800 font-bold">Shaine</p>
         </Link>
         <nav className="hidden md:flex flex-row items-center gap-x-5">
-          <Link href={"/about"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
+          <Link href={"/#/about"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
             About Us
           </Link>
-          <Link href={"/contact"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
+          <Link href={"/#/contact"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
             Contact Us
           </Link>
-          <Link href={"/sign-in"} className="p-2 rounded-md bg-indigo-800 text-white visited:bg-indigo-500 hover:bg-blue-500 active:bg-indigo-400">
+          <Link href={"/#/sign-in"} className="p-2 rounded-md bg-indigo-800 text-white visited:bg-indigo-500 hover:bg-blue-500 active:bg-indigo-400">
             Sign In
           </Link>
         </nav>

@@ -37,21 +37,21 @@ const HandBurger = () => {
                     <X className="w-6 h-6 text-black" onClick={toggleMenu} />
                     <nav className="flex flex-col gap-y-6 text-center">
                         <Link
-                            href="/about"
+                            href="/#/about"
                             onClick={closeMenu}
                             className="text-xl hover:text-indigo-200 transition-colors duration-200"
                         >
                             About Us
                         </Link>
                         <Link
-                            href="/contact"
+                            href="/#/contact"
                             onClick={closeMenu}
                             className="text-xl hover:text-indigo-200 transition-colors duration-200"
                         >
                             Contact Us
                         </Link>
                         <Link
-                            href="/sign-in"
+                            href="/#/sign-in"
                             onClick={closeMenu}
                             className="text-xl hover:text-indigo-200 transition-colors duration-200"
                         >
