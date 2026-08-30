@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import heroCard from "./components/hero_card";
 import { Gauge, Shield, UsersRound } from "lucide-react";
 import Button from "./components/button";
@@ -25,7 +26,14 @@ export default function Home() {
     <>
       <header className="w-full flex flex-row items-center justify-between">
         <Link href={"/"} id="logo" className="flex flex-col items-center gap-x-5">
-          <img src="logo_transparent.png" alt="logo" width={100} height={200} />
+          <Image
+            src="/logo_transparent.png"
+            alt="logo"
+            width={100}
+            height={200}
+            loading="eager"
+            className="w-20 h-auto"
+          />
           <p className="text-indigo-800 font-bold">Shaine</p>
         </Link>
         <nav className="hidden md:flex flex-row items-center gap-x-5">
@@ -35,8 +43,8 @@ export default function Home() {
           <Link href={"/v1/contact"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
             Contact Us
           </Link>
-          <Link href={"/v1/sign-up"} className="p-2 rounded-md bg-indigo-800 text-white visited:bg-indigo-500 hover:bg-blue-500 active:bg-indigo-400">
-            Sign Up
+          <Link href={"/v1/sign-in"} className="p-2 rounded-md bg-indigo-800 text-white visited:bg-indigo-500 hover:bg-blue-500 active:bg-indigo-400">
+            Sign In
           </Link>
         </nav>
         <span className="sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden">
@@ -44,7 +52,7 @@ export default function Home() {
         </span>
       </header>
       <main className="">
-        <div id="hero" className="flex flex-col space-y-5 text-white bg-linear-to-r from-indigo-700 via-blue-500 to-cyan-500 rounded-t-2xl px-1 md:px-5 py-5 ">
+        <div id="hero" className="flex flex-col space-y-5 text-white bg-linear-to-r from-indigo-800 via-blue-500 to-cyan-500 rounded-t-2xl px-1 md:px-5 py-5 ">
           <div className="flex flex-row justify-between items-center">
             <div className="p-10 flex flex-col gap-y-5">
               <h1 className="text-4xl font-bold">
@@ -64,7 +72,13 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden md:flex">
-              <img src="desktop.png" alt="hero image" width={1000} height={500} />
+              <Image
+                src="/desktop.png"
+                alt="hero image"
+                width={1000}
+                height={500}
+                loading="eager"
+              />
             </div>
           </div>
           <div id="hero-cards" className="flex flex-col md:flex-row flex-nowrap justify-around items-center space-x-5">

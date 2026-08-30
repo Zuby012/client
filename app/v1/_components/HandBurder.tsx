@@ -1,0 +1,84 @@
+'use client'
+
+import React, { useState } from 'react'
+import { Menu, X } from "lucide-react";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+const HandBurger = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
+    return (
+        <div className="relative">
+            {/* Hamburger Button */}
+            <button
+                onClick={toggleMenu}
+                className="text-white hover:opacity-80 transition-opacity duration-200 p-2"
+                aria-label="Toggle menu"
+            >
+                {!isOpen ? (
+                    <Menu className="w-6 h-6 text-black" />
+
+                ) : (
+                    <span></span>
+                )}
+            </button>
+
+            {/* Mobile Menu Overlay */}
+            {isOpen && (
+                <div className="fixed top-10 right-0 w-fit h-fit p-10 bg-white text-indigo-800 shadow-xl rounded-lg flex flex-col items-end justify-center gap-y-8 z-50">
+                    <X className="w-6 h-6 text-black" onClick={toggleMenu} />
+                    <nav className="flex flex-col gap-y-6 text-center">
+                        {pathname !== "/" && (
+                            <Link
+                                href="/"
+                                onClick={closeMenu}
+                                className="text-xl hover:text-indigo-200 transition-colors duration-200"
+                            >
+                                Home
+                            </Link>
+                        )}
+                        {pathname !== "/v1/about" && (
+                            <Link
+                                href="/v1/about"
+                                onClick={closeMenu}
+                                className="text-xl hover:text-indigo-200 transition-colors duration-200"
+                            >
+                                About Us
+                            </Link>
+                        )}
+                        {pathname !== "/v1/contact" && (
+                            <Link
+                                href="/v1/contact"
+                                onClick={closeMenu}
+                                className="text-xl hover:text-indigo-200 transition-colors duration-200"
+                            >
+                                Contact Us
+                            </Link>
+                        )}
+                        {pathname !== "/v1/sign-in" && (
+                            <Link
+                                href="/v1/sign-in"
+                                onClick={closeMenu}
+                                className="text-xl hover:text-indigo-200 transition-colors duration-200"
+                            >
+                                Sign In
+                            </Link>
+                        )}
+                    </nav>
+                </div>
+            )}
+        </div>
+    )
+}
+
+export default HandBurger
