@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from 'react'
 import Button from '../_components/Button';
 
 const SignIn = () => {
