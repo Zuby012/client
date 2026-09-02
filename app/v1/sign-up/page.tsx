@@ -22,7 +22,7 @@ const SignUp = () => {
     const [passwordError, setPasswordError] = useState<string>("");
     const [conPasswordError, setConPasswordError] = useState<string>("");
 
-    const [submitError, setSubmitError] = useState<boolean>(true)
+    const [submitError, setSubmitError] = useState<boolean>(false)
 
     //username validation
     const validateUsername = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -153,7 +153,12 @@ const SignUp = () => {
     }
 
     //general validation
-    const formSubmit = async () => { }
+    const formSubmit = async () => {
+        if (usernameError || firstnameError || lastnameError || emailError || passwordError || conPasswordError) {
+            setSubmitError(true)
+            return
+        }
+    }
 
     return (
         <div className="flex justify-center">
@@ -239,11 +244,7 @@ const SignUp = () => {
                                 Already have an account? Sign In
                             </Link>
                         </div>
-                        {submitError ?
-                            <Button content="Sign Up" colour="bg-gray-6" text="text-red-4" responsiveWidth="w-full" action={undefined} /> :
-                            <Button content="Sign Up" colour="bg-indigo-800" text="text-white" hoverColor="bg-indigo-700" responsiveWidth="w-full" action={formSubmit} />
-                        }
-
+                        <Button content="Sign Up" colour="bg-indigo-800" text="text-white" hoverColor="bg-indigo-700" responsiveWidth="w-full" action={formSubmit} />
                     </form>
                 </div>
                 <div className="w-full text-gray-500 flex flex-row items-center justify-center">
