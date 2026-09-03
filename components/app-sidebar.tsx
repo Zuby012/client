@@ -6,6 +6,7 @@ import {
     SidebarGroup,
     SidebarHeader,
 } from "@/components/ui/sidebar"
+import { Button } from "@/components/ui/button"
 import {
     Bell,
     House,
@@ -65,14 +66,14 @@ export function AppSidebar() {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter className="border-t-2 p-2 m-2">
-                <Link href="/profile" className="flex flex-row items-center gap-2">
+                <Link href="/profile" className="my-2 flex flex-row items-center gap-2">
                     <User className="w-4 h-4 text-indigo-400" />
                     <span className="ml-2">User name</span>
                 </Link>
-                <div className="bg-indigo-500 text-white rounded-2xl p-4 flex flex-row items-center gap-2">
+                <Button variant="destructive" className="bg-indigo-500 text-white rounded-2xl p-4 flex flex-row items-center gap-2">
                     <LogOut className="w-4 h-4" />
                     <span className="ml-2">Logout</span>
-                </div>
+                </Button>
             </SidebarFooter>
         </Sidebar>
     )
