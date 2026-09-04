@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <SidebarProvider>
             <AppSidebar />
-            <main>
+            <main className="w-full">
                 <SidebarTrigger className="mt-2 bg-indigo-500 text-indigo-100" />
                 {children}
             </main>
