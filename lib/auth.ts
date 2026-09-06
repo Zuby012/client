@@ -3,6 +3,10 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { nextCookies } from 'better-auth/next-js';
 
+if (!process.env.MONGODB_URI) {
+  throw new Error('Please add your MONGODB_URI to .env.local or Vercel environment variables');
+}
+
 const client = new MongoClient(process.env.MONGODB_URI!);
 const db = client.db();
 
