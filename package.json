@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
+    "@better-auth/mongo-adapter": "^1.7.2",
+    "better-auth": "^1.7.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cn": "^0.2.5",
     "lucide-react": "^1.37.0",
+    "mongodb": "^7.6.0",
     "next": "16.3.3",
     "ogl": "^1.0.11",
     "react": "19.2.8",
@@ -31,5 +34,10 @@
     "eslint-config-next": "16.3.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "better-auth@1.7.2": true,
+    "mongodb@7.6.0": true,
+    "@better-auth/mongo-adapter@1.7.2": true
   }
 }

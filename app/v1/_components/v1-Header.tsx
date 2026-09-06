@@ -3,8 +3,11 @@ import Link from 'next/link';
 import HandBurger from './HandBurder';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { auth } from '@/lib/auth';
 
-const Header = () => {
+type Session = typeof auth.$Infer.Session
+
+const Header = ({ session }: { session: Session | null }) => {
     const pathname = usePathname();
 
     return (
@@ -21,7 +24,12 @@ const Header = () => {
                     />
                     <p className="text-indigo-800 font-bold">Shaine</p>
                 </Link>
-                <nav className="hidden md:flex flex-row items-center gap-x-5">
+
+                {session && (<Link href={"/home"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
+                    Feeds
+                </Link>)}
+
+                {!session && (<nav className="hidden md:flex flex-row items-center gap-x-5">
                     {pathname !== "/" && (
                         <Link href={"/"} className="text-indigo-800 font-bold visited:text-indigo-500 hover:underline">
                             Home
@@ -42,7 +50,7 @@ const Header = () => {
                             Sign In
                         </Link>
                     )}
-                </nav>
+                </nav>)}
                 <span className="sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden">
                     <HandBurger />
                 </span>

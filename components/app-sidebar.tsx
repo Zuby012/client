@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import {
     Sidebar,
@@ -19,8 +20,18 @@ import {
     User,
     LogOut
 } from "lucide-react";
+import { signOut } from "@/lib/actions/auth-actions";
+import { router } from "better-auth/api";
+import { useRouter } from "next/navigation";
 
 export function AppSidebar() {
+
+    const router = useRouter()
+    const handleSignout = async () => {
+        await signOut()
+        router.push('/v1/sign-in')
+    }
+
     return (
         <Sidebar>
             <SidebarHeader className="p-2 m-2 flex flex-row items-center justify-between">
@@ -70,7 +81,7 @@ export function AppSidebar() {
                     <User className="w-4 h-4 text-indigo-400" />
                     <span className="ml-2">User name</span>
                 </Link>
-                <Button variant="destructive" className="bg-indigo-500 text-white rounded-2xl p-4 flex flex-row items-center gap-2">
+                <Button variant="destructive" className="rounded-2xl p-4 flex flex-row items-center gap-2" onClick={handleSignout}>
                     <LogOut className="w-4 h-4" />
                     <span className="ml-2">Logout</span>
                 </Button>
