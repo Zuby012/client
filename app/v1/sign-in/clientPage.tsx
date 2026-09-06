@@ -66,11 +66,19 @@ const ClientPage = () => {
                 router.push('/home')
             }
         } catch (err) {
+            /*
             if (err instanceof Error) {
                 setSubmitError(
                     `Failed to login account: ${err.message}`
                 )
             }
+            */
+            const errorMessage = err && typeof err === 'object' && 'message' in err
+                ? String(err.message)
+                : String(err);
+
+            setSubmitError(`Failed to login account: ${errorMessage}`);
+
         } finally {
             setIsLoading(false)
         }
