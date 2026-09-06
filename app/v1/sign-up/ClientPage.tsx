@@ -200,16 +200,18 @@ const ClientPage = () => {
                 router.push('/home')
             }
         } catch (err) {
+            /*
             if (err instanceof Error) {
                 setSubmitError(
-                    `Failed to create account: ${err.message}`
-                )
-            } else {
-                setSubmitError(
-                    `Failed to create account: Try again later`
+                    `Failed to login account: ${err.message}`
                 )
             }
-            console.log(err)
+            
+            const errorMessage = err && typeof err === 'object' && 'message' in err
+                ? String(err.message)
+                : String(err);
+            */
+            setSubmitError(`Failed to Sign up account, Try again later or use a different email address`);
         } finally {
             setIsLoading(false)
         }

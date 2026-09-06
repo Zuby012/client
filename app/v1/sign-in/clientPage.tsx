@@ -72,12 +72,12 @@ const ClientPage = () => {
                     `Failed to login account: ${err.message}`
                 )
             }
-            */
+            
             const errorMessage = err && typeof err === 'object' && 'message' in err
                 ? String(err.message)
                 : String(err);
-
-            setSubmitError(`Failed to login account: ${errorMessage}`);
+            */
+            setSubmitError(`Failed to login account: Wrong email or password`);
 
         } finally {
             setIsLoading(false)
