@@ -58,7 +58,7 @@ const ClientPage = ({ session }: { session: Session }) => {
             roomId: room,
             senderId: user.id,
             receiverId: '',
-            message: inputMessage.trim,
+            message: inputMessage.trim(),
             sentAt: `${now.getHours()}:${now.getMinutes()}`,
             deliveredAt: '',
             recievedAt: '',
