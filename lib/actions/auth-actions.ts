@@ -16,7 +16,7 @@ export const signUp = async (name:string, email:string, password:string) => {
         });
         return result;
     }catch(err){
-        console.log(err)
+        //console.log(err)
         throw err
     }
 }
@@ -33,7 +33,7 @@ export const signIn = async (email:string, password:string) => {
 
         return result;
     }catch(err){
-        console.log(err)
+        //console.log(err)
         throw err
     }
 } 

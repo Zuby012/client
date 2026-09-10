@@ -44,7 +44,7 @@ export function AppSidebar() {
                         <House className="w-4 h-4 text-indigo-400" />
                         <span className="ml-2">Home</span>
                     </Link>
-                    <Link href="/messages" className="flex flex-row items-center gap-2">
+                    <Link href="/chat-room" className="flex flex-row items-center gap-2">
                         <MessageCircle className="w-4 h-4 text-indigo-400" />
                         <span className="ml-2">Messages</span>
                     </Link>
