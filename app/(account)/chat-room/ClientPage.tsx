@@ -212,9 +212,9 @@ const ClientPage = ({ session }: { session: Session }) => {
                                     setInputMessage(e.target.value);
                                 }}
                             />
-                            <Button type="submit" className="ml-2">
+                            <button type="submit" className="w-10 h-[40] rounded-lg bg-black ml-2 flex flex-col items-center justify-center">
                                 <SendHorizontal className="h-full aspect-auto bg-transparent text-white" />
-                            </Button>
+                            </button>
                         </form>
                     </CardFooter>
                 </Card>
