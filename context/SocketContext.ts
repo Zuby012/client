@@ -32,7 +32,7 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
 
   useEffect(() => {
     // 1. Initialize the socket instance
-    const socketInstance = io(process.env.SERVER_URL, {
+    const socketInstance = io(process.env.NEXT_PUBLIC_SERVER_URL, {
       transports: ['websocket'],
       autoConnect: true, 
     });
